@@ -13,8 +13,11 @@ function simulador() {
   // Array para almacenar los turnos
   const turnos = [];
 
+  // Variable para controlar la ejecución del ciclo
+  let ejecutar = true;
+
   // Ciclo para ejecutar el simulador hasta que el usuario lo detenga
-  while (true) {
+  while (ejecutar) {
     console.log("Por favor, elige una opción:");
     console.log("1. Solicitar turno");
     console.log("2. Ver turnos");
@@ -46,7 +49,8 @@ function simulador() {
 
       case 3:
         console.log("¡Hasta luego!");
-        return;
+        ejecutar = false; // Establecer la variable ejecutar a false para salir del ciclo
+        break;
 
       default:
         console.log("Opción inválida. Por favor, intenta nuevamente.");
